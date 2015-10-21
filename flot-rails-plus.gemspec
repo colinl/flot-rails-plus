@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Flot::Rails::Plus::VERSION
   s.authors     = ["Colin Law"]
   s.email       = ["clanlaw@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/colinl/flot-rails-plus"
   s.summary     = %q{Provides a data driven API into the flot javascript plotting library}
   s.description = ""
   s.license     = "MIT"
