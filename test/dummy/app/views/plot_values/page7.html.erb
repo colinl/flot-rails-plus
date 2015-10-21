@@ -1,0 +1,12 @@
+<% content_for :head do %>
+  <%= setup_charts_page7 nil, nil, :url => "/plot_values/page7.json", :refresh => 15 %>
+<% end %>
+
+<h1> Four charts in two sets, ajax update</h1>
+<%= link_to "page6", plot_values_page6_path %>
+<%= link_to "page1", plot_values_page1_path %>
+
+<div id="flot_chart_div7_1" style="width:500px; height: 300px"></div>
+<div id="flot_chart_div7_2" style="width:500px; height: 300px"></div>
+<div id="flot_chart_div7_3" style="width:500px; height: 300px"></div>
+<div id="flot_chart_div7_4" style="width:500px; height: 300px"></div>

@@ -1,0 +1,26 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  timestamp: 2015-09-15 09:27:53
+  x: 0
+  v1: 0
+  v2: -.5
+
+two:
+  timestamp: 2015-09-16 09:27:53
+  x: 1
+  v1: 0.4
+  v2: -.4
+    
+three:
+  timestamp: 2015-09-17 09:27:53
+  x: 2
+  v1: -0.5
+  v2: -.3
+    
+four:
+  timestamp: 2015-09-18 09:27:53
+  x: 3
+  v1: 1
+  v2: -.2
+  

@@ -1,0 +1,11 @@
+<% content_for :head do %>
+  <%= setup_charts_page3( nil, :url => "/plot_values/page3.json", :refresh => 15 )%>
+<% end %>
+
+<h1> Charts using json callback for data, refreshed every 15 seconds </h1>
+<%= link_to "page2", plot_values_page2_path %>
+<%= link_to "page4", plot_values_page4_path %>
+<!-- create a placeholder for the flot graph -->
+<div id="flot_chart_div3_1" style="width:500px; height: 300px"></div>
+<div id="flot_chart_div3_2" style="width:500px; height: 300px"></div>
+

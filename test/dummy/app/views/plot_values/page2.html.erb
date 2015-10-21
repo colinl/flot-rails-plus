@@ -1,0 +1,10 @@
+<% content_for :head do %>
+  <%= setup_charts_page2 @plot_values %>
+<% end %>
+
+<h1> Chart with numeric x axis </h1>
+<%= link_to "page1", plot_values_page1_path %>
+<%= link_to "page3", plot_values_page3_path %>
+<!-- create a placeholder for the flot graph -->
+<div id="flot_chart_div2" style="width:500px; height: 300px"></div>
+

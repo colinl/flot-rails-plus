@@ -1,0 +1,10 @@
+<% content_for :head do %>
+  <%= setup_charts @plot_values, @url_option %>
+<% end %>
+
+<h1> Chart with time x axis </h1>
+<%= link_to "page7", plot_values_page7_path %>
+<%= link_to "page2", plot_values_page2_path %>
+<!-- create a placeholder for the flot graph -->
+<div id="flot_chart_div" style="width:500px; height: 300px"></div>
+

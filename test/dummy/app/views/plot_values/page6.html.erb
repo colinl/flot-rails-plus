@@ -1,0 +1,12 @@
+<% content_for :head do %>
+  <%= setup_charts_page6 @plot_values, @plot2_values %>
+<% end %>
+
+<h1> Four charts in two sets</h1>
+<%= link_to "page5", plot_values_page5_path %>
+<%= link_to "page7", plot_values_page7_path %>
+
+<div id="flot_chart_div6_1" style="width:500px; height: 300px"></div>
+<div id="flot_chart_div6_2" style="width:500px; height: 300px"></div>
+<div id="flot_chart_div6_3" style="width:500px; height: 300px"></div>
+<div id="flot_chart_div6_4" style="width:500px; height: 300px"></div>
