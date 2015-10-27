@@ -1,10 +1,20 @@
 module FlotViewHelpers
-  # called by application to setup the view for display or the json for callback data
-  # for html leave options blank, for json pass the json object from the view builder 
-  # as :json => json
-  # to enable that also pass :url as the full url to use for json callback in the initial
-  # call from the view, in which case samples may be nil as they will be picked up via 
-  # json call after initial view has been rendered.
+  
+  # Called by application to setup the view for display or the json for callback data.
+  #
+  # ==== Attributes
+  #
+  # * +chart_sets+ - Array of the ChartSets to be shown or updated
+  # * +options+ - For html view leave options empty.  
+  # * +options+ - For json callback pass the json object from the view builder as json: json
+  #
+  # ==== Examples
+  # 
+  # When called from view:
+  #    setup_flot_view [chart_set_1, chart_set_2]
+  # When called from json view builder
+  #    setup_flot_view [chart_set_1, chart_set_2], json: json
+  #
   def setup_flot_view( chart_sets, options = {} )
     if options[:json]
       build_json chart_sets, options
@@ -13,7 +23,7 @@ module FlotViewHelpers
     end
   end
   
-  def build_gon( chart_sets, options = {} )
+  def build_gon( chart_sets, options = {} )   # :nodoc:
     gon.url = options[:url]
     gon.refresh = options[:refresh]
     gon.chart_sets = chart_sets.map { |c| c.as_hash }
@@ -22,7 +32,7 @@ module FlotViewHelpers
     include_gon
   end    
   
-  def build_json( chart_sets, options )
+  def build_json( chart_sets, options )   # :nodoc:
     json = options[:json]
     json.chart_sets chart_sets.map{ |c| c.as_hash(:with_charts => false) } 
   end

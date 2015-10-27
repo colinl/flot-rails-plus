@@ -1,7 +1,7 @@
 class ActiveSupport::TestCase  
   
-  # call after requesting a page to extract gon.chart_sets as an array of ChartSets
-  # where each ChartSet is a hash
+  # Call after requesting a page to extract the chart sets as an array of ChartSets
+  # where each ChartSet is a hash.
   def fetch_flot_chart_sets
     chart_sets = nil
     assert_select "script", /gon\.chart_sets=/ do |element|
@@ -16,7 +16,8 @@ class ActiveSupport::TestCase
     chart_sets
   end
   
-  # returns all charts from all sets
+  # Call after requesting a page to extract all charts from all sets.
+  # The result is an array of hashes.
   def fetch_flot_charts
     chart_sets = fetch_flot_chart_sets
     charts = []
@@ -24,15 +25,15 @@ class ActiveSupport::TestCase
     charts
   end
   
-  # call after requesting a page to extract the chart for a given div
-  # nil if not found
+  # Call after requesting a page to extract the chart for a given div.
+  # Returns nil if not found.
   def fetch_flot_chart_by_div( div )
     charts = fetch_flot_charts  # fetch all charts from all sets
     charts_for_div = charts.select { |c| c["div"] == div }
     charts_for_div.empty?  ?  nil  :  charts_for_div[0]
   end
     
-  # call after requesting a readings page to extract gon.url
+  # Call after requesting a page to extract the json callback url.
   def fetch_flot_callback_url
     url = nil
     assert_select "script", /gon\.url=/ do |element|
@@ -45,7 +46,7 @@ class ActiveSupport::TestCase
     url
   end
     
-  # call after requesting a readings page to extract gon.refresh
+  # Call after requesting a readings page to extract the refresh repeat time.
   def fetch_flot_refresh
     refresh = nil
     assert_select "script", /gon\.refresh=/ do |element|
