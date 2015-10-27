@@ -10,16 +10,18 @@ Gem::Specification.new do |s|
   s.authors     = ["Colin Law"]
   s.email       = ["clanlaw@gmail.com"]
   s.homepage    = "https://github.com/colinl/flot-rails-plus"
-  s.summary     = %q{Provides a data driven API into the flot javascript plotting library}
-  s.description = ""
+  s.summary     = "Provides an Object Oriented interface into the flot javascript plotting library"
+  s.description = "Provides an Object Oriented interface into the flot javascript plotting library"
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
+  
+  s.required_ruby_version = '>= 1.8.7'
 
   s.add_dependency "rails", ">=3.2.2"
   s.add_dependency 'flot-rails'
-  s.add_dependency 'gon'
+  s.add_dependency 'gon', '>=4.1.1'
   s.add_dependency 'coffee-rails', '>=3.2.2'
 
   s.add_development_dependency 'sqlite3'
